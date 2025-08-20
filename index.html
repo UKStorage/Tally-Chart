@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tally Embed</title>
+  <style>
+    iframe {
+      width: 1600px;
+      height: 645px;
+      border: 0;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="iframe-container">
+    <iframe
+      id="sharepoint-frame"
+      src="https://ukstoragecompany-my.sharepoint.com/personal/tobibagatelascurtis_ukstoragecompany_co_uk/_layouts/15/Doc.aspx?sourcedoc={80e72569-70f1-4ec9-90e0-2b2110827ab5}&action=embedview&wdAllowInteractivity=False&wdHideGridlines=True&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True"
+    ></iframe>
+  </div>
+
+  <script>
+    function refreshIframe() {
+      const iframe = document.getElementById('sharepoint-frame');
+      const src = iframe.src;
+      iframe.src = src;
+    }
+
+    // Refresh every 2 minutes (120000 ms)
+// 1 minute = 600000
+    setInterval(refreshIframe, 60000);
+  </script>
+
+</body>
+</html>
